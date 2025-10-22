@@ -1,0 +1,377 @@
+<!--
+INFOGRAPHIC NARRATIVE PLAN:
+1. Interest: Establish passion for SDG 7 and its rapid progress.
+    - Viz 1: Donut Chart - Current state of access (The Gap).
+    - Viz 2: Line Chart - Historical Trend of Access (The Progress).
+2. Context: Relate the global goal to a familiar, local, sociotechnical challenge (Appalachia).
+    - Viz 3: Grouped Bar Chart - Energy Mix (The Structural Problem).
+    - Viz 4: Radar Chart - Multi-dimensional Impact (The Human Challenge).
+3. Plan: Detail the Bio-Energy Hub solution and the required interdisciplinary team.
+    - Viz 5: Stacked Bar Chart - Proposed Impact vs. Status Quo (The Technical Solution).
+    - Viz 6: Flow Diagram - Implementation Process (The Sociotechnical Roadmap).
+COLOR PALETTE: Brilliant Blues & Energetic Yellow (#00449E, #086788, #07A0C3, #F0C808)
+CONFIRMATION: NEITHER Mermaid JS NOR SVG were used in this output. All graphics are Chart.js (Canvas) or structured HTML/CSS.
+-->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UN SDG #7: Powering the Future for All</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+            padding: 1rem;
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .section-fade {
+            background: linear-gradient(to bottom, rgba(0, 68, 158, 0.9), rgba(0, 68, 158, 0.7));
+        }
+        .stat-number {
+            font-weight: 900;
+            color: #F0C808;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .flow-step {
+            border-color: #07A0C3;
+            background-color: #ffffff;
+            color: #086788;
+        }
+        .flow-arrow {
+            color: #07A0C3;
+        }
+        .team-card {
+            border-left: 4px solid #F0C808;
+        }
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <header class="h-screen bg-cover bg-center bg-fixed flex items-center justify-center text-white text-center section-fade" style="background-image: url('https://placehold.co/1920x1080/00449E/FFFFFF?text=Clean+Energy+Future');">
+        <div class="bg-black bg-opacity-30 p-8 md:p-12 rounded-lg">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">Powering the Future for All</h1>
+            <p class="text-lg md:text-2xl font-semibold mb-2">An Exploration of UN Sustainable Development Goal #7</p>
+            <p class="text-md md:text-xl">By Alex Doe</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 md:px-8 py-16">
+
+        <!-- INTEREST SECTION -->
+        <section id="interest" class="mb-20 scroll-mt-20">
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-[#00449E]">My Interest: The Spark of Innovation and Progress</h2>
+                <div class="mb-8">
+                     <p class="mb-4 text-lg leading-relaxed">The UN Sustainable Development Goal that I am most interested in is **Goal #7**, ensuring access to affordable, reliable, sustainable, and modern energy for all. To me, energy means work. It represents our ability to accomplish tasks without arduous manual labor, to power new technologies, and to spread education to every corner of the globe. This isn't just an abstract concept for me; I've contributed in the past by inventing a battery that runs on organic waste. The simple act of filling it with any sort of organic material allows it to produce electricity. Through this research, I learned that we have made incredible headway on this goal over the past few years. It's become clear that we are very likely to get **immeasurably close to solving it**, and that progress is what truly motivates me.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- VISUALIZATION 1: Access Gap (Donut) -->
+                    <div class="flex flex-col">
+                        <div class="chart-container">
+                            <canvas id="accessDonutChart"></canvas>
+                        </div>
+                         <p class="mt-4 text-center text-gray-600 italic text-sm">This **Donut Chart** shows the remaining population gap in 2021. The immense progress we've made only makes the concentration of the remaining challenge (particularly in Sub-Saharan Africa) more striking. This visualization highlights exactly where our Target 7.b efforts must be concentrated.</p>
+                    </div>
+
+                    <!-- VISUALIZATION 2: Historical Progress (Line) -->
+                     <div class="flex flex-col">
+                        <div class="chart-container">
+                            <canvas id="progressLineChart"></canvas>
+                        </div>
+                         <p class="mt-4 text-center text-gray-600 italic text-sm">The **Line Chart** clearly maps the rapid acceleration of energy access globally since 2010. This trend reinforces my belief that achieving the goal is possible; the rate of progress over the last decade shows a powerful trajectory we must maintain, especially in the least developed regions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CONTEXT SECTION -->
+        <section id="context" class="mb-20 scroll-mt-20">
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-[#00449E]">A Familiar Context: The Appalachian Energy Divide</h2>
+                <div class="mb-8">
+                    <p class="mb-4 text-lg leading-relaxed">To understand Target 7.b—"expand infrastructure and upgrade technology for supplying modern and sustainable energy services"—I look to a familiar context: the **Appalachian regions** of Ohio and neighboring states. While not a "developing country," many rural communities here face a form of energy poverty. They are often served by an aging electrical grid that is less reliable and more susceptible to outages, and their local economies are historically tied to high-carbon sources. The people in these towns are directly affected: unreliable power impacts small businesses, online education, and access to telehealth services. Addressing this is a pathway to economic revitalization and energy resilience.</p>
+                    <img src="https://placehold.co/1200x300/086788/FFFFFF?text=Appalachian+Communities+Seeking+Resilience" alt="A scenic view of the Appalachian mountains representing the context of energy challenges in the region." class="rounded-lg shadow-md w-full my-4">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- VISUALIZATION 3: Energy Mix (Grouped Bar) -->
+                    <div class="flex flex-col">
+                        <div class="chart-container">
+                            <canvas id="energyMixBarChart"></canvas>
+                        </div>
+                         <p class="mt-4 text-center text-gray-600 italic text-sm">This **Grouped Bar Chart** compares the estimated Appalachian region's energy generation mix against the national average. The data clearly illustrates the disproportionately high reliance on coal in this familiar context, underscoring why local infrastructure investment must focus on diversification and adopting modern, sustainable technologies.</p>
+                    </div>
+                    
+                    <!-- VISUALIZATION 4: Energy Impact (Radar) -->
+                    <div class="flex flex-col">
+                        <div class="chart-container">
+                            <canvas id="impactRadarChart"></canvas>
+                        </div>
+                         <p class="mt-4 text-center text-gray-600 italic text-sm">The **Radar Chart** visualizes the multidimensional impact of energy insecurity in Appalachia. The low scores in 'Grid Reliability' and 'Affordable Access' show the technical gap, while the lower 'Economic Diversity' score highlights the deep **sociotechnical complexity** of the challenge. Our solution must address all these facets, not just the technical ones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLAN SECTION -->
+        <section id="plan" class="scroll-mt-20">
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-[#00449E]">The Plan: Community Bio-Energy Hubs</h2>
+                <div class="mb-8">
+                    <p class="mb-4 text-lg leading-relaxed">My plan is to build on my previous work and address the needs of the Appalachian context directly. I propose the development of small-scale, community-owned **"Bio-Energy Hubs."** These hubs would utilize technology similar to my organic waste battery, converting local organic waste (agricultural runoff, forestry byproducts) into a reliable source of electricity for the community. This creates a closed-loop system that reduces landfill waste, generates clean energy, and provides local jobs.</p>
+                    <p class="text-lg leading-relaxed">The target of "expanding infrastructure and upgrading technology" is something I find deeply inspiring. Regions like Appalachia have a unique chance to build a renewable-based infrastructure from the ground up. By making strategic investments now, we can help them leapfrog the fossil fuel-dependent stage entirely. For me, 2030 isn't a final deadline; it's a **continuing promise and effort**, and this plan is a tangible step I can take right now.</p>
+                    <img src="https://placehold.co/1200x300/07A0C3/FFFFFF?text=Interdisciplinary+Team+Powering+Change" alt="A conceptual image representing the interdisciplinary team collaborating on the project." class="rounded-lg shadow-md w-full my-4">
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- VISUALIZATION 5: Implementation Flow (HTML/CSS Diagram) -->
+                    <div class="flex flex-col">
+                        <h3 class="text-2xl font-bold text-[#086788] mb-4 text-center">Implementation Flow: A Sociotechnical Roadmap</h3>
+                        <div class="space-y-4">
+                            <div class="text-center p-4 rounded-lg shadow-lg flow-step border-2">
+                                <p class="font-bold text-lg">1. Sociological Audit & Design</p>
+                                <p class="text-sm">Community Organizers and Sociologists establish trust and cooperative ownership.</p>
+                            </div>
+                            <div class="text-center text-3xl font-bold flow-arrow">&darr;</div>
+                            <div class="text-center p-4 rounded-lg shadow-lg flow-step border-2">
+                                <p class="font-bold text-lg">2. Technical & Waste Assessment</p>
+                                <p class="text-sm">Engineers and Planners assess local waste streams and optimal site location.</p>
+                            </div>
+                            <div class="text-center text-3xl font-bold flow-arrow">&darr;</div>
+                            <div class="text-center p-4 rounded-lg shadow-lg flow-step border-2">
+                                <p class="font-bold text-lg">3. Financial Modeling & Policy Integration</p>
+                                <p class="text-sm">Economists and Policy Experts secure funding and navigate regulatory hurdles.</p>
+                            </div>
+                            <div class="text-center text-3xl font-bold flow-arrow">&darr;</div>
+                            <div class="text-center p-4 rounded-lg shadow-lg flow-step border-2">
+                                <p class="font-bold text-lg">4. Deployment & Local Training</p>
+                                <p class="text-sm">Engineers install the hub; local workforce is trained for maintenance and operation.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- VISUALIZATION 6: Anticipated Impact (Stacked Bar) -->
+                    <div class="flex flex-col">
+                         <h3 class="text-2xl font-bold text-[#086788] mb-4 text-center">Anticipated Impact: Bio-Hub vs. Status Quo</h3>
+                        <div class="chart-container">
+                            <canvas id="impactStackedBarChart"></canvas>
+                        </div>
+                         <p class="mt-4 text-center text-gray-600 italic text-sm">This **Stacked Bar Chart** models the anticipated environmental and energy benefits of a single Bio-Energy Hub versus the status quo (relying on traditional power/landfilling). The plan shows a significant shift toward local energy production and a reduction in waste, illustrating a practical way to meet Target 7.b.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#00449E] text-white text-center p-6 mt-16">
+        <p>&copy; 2025 Alex Doe | A project for the UN Sustainable Development Goals Initiative.</p>
+    </footer>
+
+    <script>
+        const BLUE_DARK = '#00449E';
+        const BLUE_MEDIUM = '#086788';
+        const BLUE_LIGHT = '#07A0C3';
+        const YELLOW_ACCENT = '#F0C808';
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            } else {
+              return label;
+            }
+        };
+
+        // --- 1. INTEREST: Access Gap (Donut) ---
+        const accessDonutCtx = document.getElementById('accessDonutChart').getContext('2d');
+        new Chart(accessDonutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Sub-Saharan Africa', ['Rest of', 'Developing World'], ['Developed', 'World']],
+                datasets: [{
+                    label: 'Population without Electricity Access',
+                    data: [387, 218, 70],
+                    backgroundColor: [BLUE_MEDIUM, BLUE_LIGHT, YELLOW_ACCENT],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 3,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } },
+                    title: { display: true, text: 'Population Without Access (millions)', padding: { top: 10, bottom: 10 }, color: BLUE_DARK }
+                }
+            }
+        });
+
+        // --- 2. INTEREST: Historical Progress (Line) ---
+        const progressLineCtx = document.getElementById('progressLineChart').getContext('2d');
+        new Chart(progressLineCtx, {
+            type: 'line',
+            data: {
+                labels: ['2010', '2015', '2020', '2025 (Proj)', '2030 (Goal)'],
+                datasets: [
+                    {
+                        label: 'Global Access Rate (%)',
+                        data: [83, 87, 91, 95, 100],
+                        borderColor: BLUE_DARK,
+                        backgroundColor: 'rgba(0, 68, 158, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: false, min: 80, max: 100, title: { display: true, text: 'Access Rate (%)' } }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } },
+                    title: { display: true, text: 'Global Electricity Access Trend', padding: { top: 10, bottom: 10 }, color: BLUE_DARK }
+                }
+            }
+        });
+
+        // --- 3. CONTEXT: Energy Mix (Grouped Bar) ---
+        const energyMixBarCtx = document.getElementById('energyMixBarChart').getContext('2d');
+        new Chart(energyMixBarCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Renewables', ['Natural', 'Gas'], 'Coal', 'Nuclear'],
+                datasets: [
+                    {
+                        label: 'U.S. Average Mix',
+                        data: [21.5, 40, 19.5, 19],
+                        backgroundColor: BLUE_LIGHT,
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Appalachian Region (Est.)',
+                        data: [8, 35, 52, 5],
+                        backgroundColor: BLUE_MEDIUM,
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: 'Percentage of Generation (%)' } }
+                },
+                plugins: {
+                     legend: { position: 'bottom' },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } },
+                    title: { display: true, text: 'Energy Generation Mix Comparison', padding: { top: 10, bottom: 20 }, color: BLUE_DARK }
+                }
+            }
+        });
+        
+        // --- 4. CONTEXT: Energy Impact (Radar) ---
+        const impactRadarCtx = document.getElementById('impactRadarChart').getContext('2d');
+        new Chart(impactRadarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Grid Reliability', 'Affordable Access', 'Economic Diversity', 'Health & Education', ['Infrastructure', 'Age']],
+                datasets: [
+                    {
+                        label: 'Score (10=Good)',
+                        data: [3, 4, 3, 5, 2],
+                        backgroundColor: 'rgba(240, 200, 8, 0.4)',
+                        borderColor: YELLOW_ACCENT,
+                        pointBackgroundColor: YELLOW_ACCENT,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: YELLOW_ACCENT
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                elements: { line: { borderWidth: 3 } },
+                scales: {
+                    r: {
+                        angleLines: { display: false },
+                        suggestedMin: 0,
+                        suggestedMax: 10,
+                        pointLabels: { font: { size: 10 } },
+                        grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                        ticks: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } },
+                    title: { display: true, text: 'Sociotechnical Challenges in Appalachia (1-10 Scale)', padding: { top: 10, bottom: 10 }, color: BLUE_DARK }
+                }
+            }
+        });
+        
+        // --- 5. PLAN: Anticipated Impact (Stacked Bar) ---
+        const impactStackedBarCtx = document.getElementById('impactStackedBarChart').getContext('2d');
+        new Chart(impactStackedBarCtx, {
+            type: 'bar',
+            data: {
+                labels: [['Local Energy', 'Generation (MWh)'], ['Organic Waste', 'Diverted (Tons)'], ['Carbon', 'Emissions (Tons)']],
+                datasets: [
+                    {
+                        label: 'Bio-Hub Project',
+                        data: [400, 200, -150],
+                        backgroundColor: BLUE_LIGHT,
+                    },
+                    {
+                        label: 'Status Quo (Estimated)',
+                        data: [0, 0, 50],
+                        backgroundColor: YELLOW_ACCENT,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true, title: { display: true, text: 'Metric Value' } }
+                },
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } },
+                    title: { display: true, text: 'Projected Annual Impact vs. Status Quo', padding: { top: 10, bottom: 10 }, color: BLUE_DARK }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
